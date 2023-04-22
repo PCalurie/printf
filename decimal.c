@@ -35,4 +35,3 @@ void print_d(va_list lists, char *buffer, int *p_index)
 	}
 	free(num_str);
 }
-
