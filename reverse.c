@@ -1,20 +1,20 @@
-#include "main.h"
+#include "holberton.h"
 /**
-* print_r - reverses a string passed
-* @valist: argument passed
-* @buffer: values in the buffer
-* @p_index: pointer to index
-*/
-void print_r(va_list lists, char *buffer, int *p_index)
+ * format_r - reverse a string passed in
+ * @lists: argument passed in
+ * @buffer: values stored
+ * @p_index: returns pointer to index
+ */
+void format_r(va_list lists, char *buffer, int *p_index)
 {
-	int x, str_len;
-	char *str;
+	int x, strlen;
+	char *s;
 
-	str = va_arg(lists, char *);
-	str_len = str_len(str) - 1;
+	s = va_arg(lists, char *);
+	strlen = _strlen(s) - 1;
 
-	for (x = str_len; x >= 0; x--, *p_index += 1)
+	for (x = strlen; x >= 0; x--, *p_index += 1)
 	{
-		buffer[*p_index] = str[x];
+		buffer[*p_index] = s[x];
 	}
 }
