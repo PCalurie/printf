@@ -1,18 +1,14 @@
-#include “main.h”
 #include <stdio.h>
 /**
-* istr - converts an integer to string
-* @str: string
-* @n: number
-*
-* Return: a string
-*/
+ * istr - integer to string
+ * @str: array of chars
+ * @n: number
+ *
+ * Return: one str
+ */
 char *istr(char str[], long int n)
 {
-	int x, last;
-int div = 1;
-int len = 0;
-	long Int temp = n;
+	int x, temp, div, len, last;
 
 	last = n % 10;
 	x = 0;
@@ -28,67 +24,94 @@ int len = 0;
 	{
 		n *= -1;
 	}
-	for (len = 0; temp > 0; len++)
-{
-    		div *= 10;
-    		temp /= 10;
-}
-	div = div / 10;
 
-	for (div = 1; n / div > 9; div *= 10)
-	;
-	
-for (; div >= 1; div /= 10)
-{
-		str[x++] = ((n / div) + '0');
+	len = 0;
+	div = 1;
+	temp = n;
+
+	while (temp > 0)
+	{
+		len += 1;
+		div *= 10;
+		temp = temp / 10;
+	}
+
+	div = div / 10;
+	while (div >= 1)
+	{
+		str[x] = ((n / div) + '0');
 		n = n % div;
-}
+		div /= 10;
+		x++;
+	}
 	str[x] = last + '0';
 	return (str);
 }
+
 /**
- * ustr - converts an unsigned integer to a string
- * @str: pointer to the char array where the string will be stored
- * @num: the unsigned integer to be converted
+ * ustr - uint to string
+ * @str: string
+ * @num: num
  *
- * Return: pointer to the converted string
+ * Return: char array
  */
 char *ustr(char str[], unsigned int num)
 {
-        int x, len = 0;
-        unsigned int n;
+	int x, rem, len = 0, n;
 
-        n = num;
-        for (; n != 0; len++)
-                n /= 10;
+	n = num;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	x = 0;
 
-        x = 0;
-        for (; x < len; x++)
-        {
-                str[len - (x + 1)] = (num % 10) + '0';
-                num /= 10;
-        }
+	while (x < len)
+	{
+		rem = num % 10;
+		num = num / 10;
 
-        str[len] = '\0';
-        return (str);
+		str[len - (x + 1)] = rem + '0';
+		x++;
+	}
+
+	str[len] = '\0';
+	return (str);
 }
-
 /**
  * digits_count - getting the length of a number
  * @num: the number
  *
- * Return: the length of the number
+ * Return: int
  */
 int digits_count(int num)
 {
-        int len = 0;
-        int n = num;
+	int n, len;
 
-        for (; n != 0; len++)
-        {
-                n /= 10;
-        }
-
-        return (len);
+	n = num;
+	len = 0;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
+/**
+ * _strlen - count the length of a string
+ *  @s: char pointer
+ *
+ * Return: integer
+ */
+int _strlen(char *s)
+{
+	int x, count;
 
+	count = 0;
+	for (x = 0; s[x] != '\0'; x++)
+	{
+		count++;
+	}
+	return (x);
+}
