@@ -1,0 +1,58 @@
+.TH _printf 3 "April 2023" "GNU C Library Functions"
+.SH NAME
+_printf - formatted output conversion function
+
+.SH SYNOPSIS
+#include “main.h”
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The _printf function is a formatted output conversion function that produces output according to a format string. The format string is a character string that contains conversion specifications, which begin with the percent (%) character and are followed by one or more format specifiers.
+
+The format string may contain any number of ordinary characters, which are copied verbatim to the output stream, and conversion specifications, which are replaced by the values of the corresponding arguments.
+
+Each conversion specification consists of the percent (%) character, an optional field width specification, an optional precision specification, an optional length modifier, and a conversion specifier character.
+
+The field width specification is a non-negative integer that specifies the minimum number of characters to be printed. If the value to be printed is shorter than the field width, it is padded with spaces (or zeros) to the specified width.
+
+The precision specification is a period (.) followed by a non-negative integer that specifies the maximum number of characters to be printed for strings, or the number of decimal places for floating-point numbers.
+
+The length modifier is a character that specifies the size of the argument. The supported length modifiers are:
+
+- h: short (for integer types)
+- l: long (for integer and floating-point types)
+- z: size_t (for integer types)
+- j: intmax_t (for integer types)
+- t: ptrdiff_t (for integer types)
+
+The conversion specifier character indicates the type of conversion to be applied to the argument. The supported conversion specifier characters are:
+
+- %: prints a literal percent character
+- c: prints a single character
+- s: prints a null-terminated string
+- d, i: prints a signed decimal integer
+- u: prints an unsigned decimal integer
+- o: prints an unsigned octal integer
+- x, X: prints an unsigned hexadecimal integer
+- p: prints a pointer value
+- b: prints an unsigned binary integer
+
+The _printf function returns the number of characters printed, or a negative value if an error occurs.
+
+.SH EXAMPLES
+Print the string "Hello, world!":
+    _printf("Hello, world!\n");
+
+Print a formatted string:
+    int n = 42;
+    _printf("The answer is %d.\n", n);
+
+Print a binary number:
+    unsigned int b = 0b101011;
+    _printf("The binary number is %b.\n", b);
+
+.SH RETURN VALUE
+On success
+
+Peter Karuri
+Wycliffe Ndung’u
