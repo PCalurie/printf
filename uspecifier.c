@@ -68,7 +68,7 @@ void print_h(va_list lists, char *buffer, int *p_index)
 * print_ch - ch specifire
 * @lists: list available
 * @buffer: buffer used
-* @index: pointer to the index
+* @p_index: pointer to the index
 *
 * Return: void
 */
@@ -96,7 +96,7 @@ void print_ch(va_list lists, char *buffer, int *p_index)
 	free(_hex);
 }
 /**
-* format_o - o specifire
+* print_o - o specifier
 * @lists: the list
 * @buffer: buffer used
 * @p_index: pointer to index
