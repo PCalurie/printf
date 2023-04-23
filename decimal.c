@@ -3,9 +3,9 @@
 #include <stdlib.h>
 /**
 * print_d - returns an int to signed decimal
-* @valist: argument list
+* @lists: argument list
 * @buffer: values in the list
-* @index: the index position
+* @p_index: the index position
 */
 void print_d(va_list lists, char *buffer, int *p_index)
 {
