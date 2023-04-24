@@ -1,60 +1,99 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
+
 /**
-* _printf - prints any format based on its specifier
-* @format: format specifier
-* Return: pointer index
-*/
+ * _printf - custom printf implementation
+ * @format: format string
+ *
+ * Return: number of characters printed (excluding null byte), or -1 on error
+ */
 int _printf(const char *format, ...)
 {
-	char buffer[1024];
-	int i = 0, x, y = 0, a = 0, *p_index = &i;
-	va_list lists;
+	va_list args;
+	int i, j, len = 0;
+	convert_match m[] = {
+		{"%s", print_string},
+		{"%c", print_char},
+		{"%%", print_percent},
+		{"%i", print_int},
+		{"%d", print_decimal},
+		{"%r", print_rev},
+		{"%R", print_rot13},
+		{"%b", print_binary},
+		{"%u", print_unsigned},
+		{"%o", print_octal},
+		{"%x", print_hex},
+		{"%X", print_HEX},
+		{"%S", print_exclusive_string},
+		{"%p", print_pointer},
+	};
 
-	if (!format)
+	if (format == NULL)
 		return (-1);
 
-	va_start(lists, format);
+	va_start(args, format);
 
-	vtype_t spec[] = {
-		{'c', print_char}, {'d', print_d}, {'s', print_str}, {'i', print_i},
-		{'u', print_u}, {'%', print_perc}, {'x', print_h}, {'X', print_ch},
-		{'o', print_o}, {'b', print_b}, {'p', print_p}, {'r', print_r},
-		{'R', print_R}, {'\0', NULL}
-};
-
-	for (x = 0; format[x] != '\0'; x++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		for (; format[x] != '%' && format[x] != '\0'; *p_index += 1, x++)
+		if (format[i] == '%')
 		{
-			if (*p_index == 1024)
-			{	write_buffer(buffer, p_index);
-				reset_buffer(buffer);
-				*p_index = 0;
-			}
-			buffer[*p_index] = format[x];
-		}
-
-			if (format[x] == '\0')
-				break;
-
-			if (format[x] == '%')
+			for (j = 0; j < 14; j++)
 			{
-				x++;
-				for (y = 0; spec[y].tp != '\0'; y++)
+				if (compare_id(format + i, m[j].id))
 				{
-					if (format[x] == spec[y].tp)
-					{
-						spec[y].f(lists, buffer, p_index);
-						break;
-					}
+					len += m[j].f(args);
+					i += _strlen(m[j].id) - 1;
+					break;
 				}
 			}
+			if (j == 14)
+			{
+				_putchar(format[i]);
+				len++;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			len++;
+		}
 	}
 
-	va_end(lists);
-	buffer[*p_index] = '\0';
-	write_buffer(buffer, p_index);
-	return (*p_index);
+	va_end(args);
+	return (len);
+}
+
+/**
+ * compare_id - compares id with a string in format starting at format
+ * @format: format string
+ * @id: string to compare
+ *
+ * Return: 1 if strings match, else 0
+ */
+int compare_id(const char *format, const char *id)
+{
+	int i;
+
+	for (i = 0; id[i] != '\0'; i++)
+	{
+		if (format[i] != id[i])
+			return (0);
+	}
+
+	return (1);
+}
+
+/**
+ * _strlen - gets the length of a string
+ * @s: string
+ *
+ * Return: length of the string
+ */
+int _strlen(const char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+
+	return (i);
 }

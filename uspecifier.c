@@ -91,7 +91,7 @@ void print_ch(va_list lists, char *buffer, int *p_index)
 	}
 	for (x--; x >= 0; *p_index += 1, x--)
 	{
-		buffer[*p_index] = hex[x];
+		buffer[*p_index] = _hex[x];
 	}
 	free(_hex);
 }

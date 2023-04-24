@@ -12,7 +12,7 @@ void print_d(va_list lists, char *buffer, int *p_index)
 	int x, y, num_len;
 	char *num_str;
 
-	i = va_arg(lists, int);
+	x = va_arg(lists, int);
 
 	num_len = digits_count(x);
 	if (x < 0)

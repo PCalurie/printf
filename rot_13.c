@@ -1,29 +1,34 @@
 #include "main.h"
 /**
- * print_R - function that converts a string into rot13
- * @lists: argument list
- * @buffer: values in the buffer
- * @p_index: the index position
+ * print_rot13 - prints in ROT13 encryption
+ * @args: arguments
+ * Return: count
  */
-void print_R(va_list lists, char *buffer, int *p_index)
+int print_rot13(va_list args)
 {
-	char *str;
-	int x;
+	int i, counter = 0;
+	char *s = va_arg(args, char*);
 
-	str = va_arg(lists, char *);
-	for (x = 0; str[x] != '\0'; x++, (*p_index)++)
+	if (s == NULL)
+		s = "(null)";
+
+	for (i = 0; s[i]; i++)
 	{
-		if (str[x] >= 'a' && str[x] <= 'z')
+		if (s[i] >= 'a' && s[i] <= 'z')
 		{
-			buffer[*p_index] = (str[x] - 'a' + 13) % 26 + 'a';
+			_putchar((s[i] - 'a' + 13) % 26 + 'a');
+			counter++;
 		}
-		else if (str[x] >= 'A' && str[x] <= 'Z')
+		else if (s[i] >= 'A' && s[i] <= 'Z')
 		{
-			buffer[*p_index] = (str[x] - 'A' + 13) % 26 + 'A';
+			_putchar((s[i] - 'A' + 13) % 26 + 'A');
+			counter++;
 		}
 		else
 		{
-			buffer[*p_index] = str[x];
+			_putchar(s[i]);
+			counter++;
 		}
 	}
+	return (counter);
 }

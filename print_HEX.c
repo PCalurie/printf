@@ -5,12 +5,11 @@
  * @val: arguments used
  * Return: count
  */
-int print_HEX(va_list val)
+int print_HEXo(unsigned int num)
 {
 	int x;
 	int *array;
 	int count = 0;
-	unsigned int num = va_arg(val, unsigned int);
 	unsigned int temp = num;
 
 	while (num / 16 != 0)
@@ -20,8 +19,6 @@ int print_HEX(va_list val)
 	}
 	count++;
 	array = malloc(count * sizeof(int));
-	if (array == NULL)
-		return (-1);
 
 	for (x = 0; x < count; x++)
 	{
