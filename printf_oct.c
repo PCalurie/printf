@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * printf_oct - prints an octal number.
- * @val: arguments.
+ * printf_oct -octal num logger
+ * @val: parameters.
  * Return: counter.
  */
 int printf_oct(va_list val)
