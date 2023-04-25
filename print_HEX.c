@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_HEX - prints a hexadecimal number.
- * @val: arguments used
+ * print_HEXo - prints a hexadecimal number.
+ * @num: arguments used
  * Return: count
  */
 int print_HEXo(unsigned int num)
