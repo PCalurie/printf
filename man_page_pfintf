@@ -54,5 +54,6 @@ Print a binary number:
 .SH RETURN VALUE
 On success
 
-Peter Karuri
-Wycliffe Ndung’u
+.SH AUTHOR
+Peter Karuri <peterkaruri@gmail.com>
+Wycliffe Ndung’u <wickynjy@gmail.com>
