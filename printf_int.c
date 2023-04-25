@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * printf_int - prints integer
- * @args: argument to print
- * Return: number of characters printed
+ * printf_int - prints an integer
+ * @args: argument to be  print
+ * Return: number of characters printed to the console
  */
 int printf_int(va_list args)
 {
@@ -12,7 +12,7 @@ int printf_int(va_list args)
 
 	n = n / 10;
 	num = n;
-
+/* if not positive */
 	if (last < 0)
 	{
 		_putchar('-');
@@ -21,7 +21,7 @@ int printf_int(va_list args)
 		last = -last;
 		i++;
 	}
-	if (num > 0)
+	if (num > 0) /* if positive */
 	{
 		while (num / 10 != 0)
 		{
@@ -42,13 +42,11 @@ int printf_int(va_list args)
 
 	return (i);
 }
-
 /**
- * printf_dec - prints decimal
- * @args: argument to print
- * Return: number of characters printed
+ * printf_dec - prints decimal points
+ * @args: argument to be print
+ * Return: number of characters printed on the console
  */
-
 int printf_dec(va_list args)
 {
 	int n = va_arg(args, int);
@@ -58,7 +56,7 @@ int printf_dec(va_list args)
 
 	n = n / 10;
 	num = n;
-
+/* if not positive */
 	if (last < 0)
 	{
 		_putchar('-');
@@ -67,7 +65,7 @@ int printf_dec(va_list args)
 		last = -last;
 		i++;
 	}
-	if (num > 0)
+	if (num > 0) /* if positive */
 	{
 		while (num / 10 != 0)
 		{
@@ -85,6 +83,6 @@ int printf_dec(va_list args)
 		}
 	}
 	_putchar(last + '0');
-
+/* print integer */
 	return (i);
 }

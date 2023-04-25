@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * printf_unsigned - prints integer
- * @args: argument to print
+ * printf_unsigned - prints an integer
+ * @args: argument to be printed
  * Return: number of characters printed
  */
 int printf_unsigned(va_list args)
@@ -12,7 +12,7 @@ int printf_unsigned(va_list args)
 
 	n = n / 10;
 	num = n;
-
+/* if not positive */
 	if (last < 0)
 	{
 		_putchar('-');
@@ -21,7 +21,7 @@ int printf_unsigned(va_list args)
 		last = -last;
 		i++;
 	}
-	if (num > 0)
+	if (num > 0) /* if positive */
 	{
 		while (num / 10 != 0)
 		{
@@ -39,6 +39,6 @@ int printf_unsigned(va_list args)
 		}
 	}
 	_putchar(last + '0');
-
+/* print integer */
 	return (i);
 }
