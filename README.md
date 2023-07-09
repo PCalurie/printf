@@ -1,9 +1,6 @@
 # 0x11. C - printf
 ## A GUIDE TO THE PROJECT TASKS
-``` 
-knowledge of bit manipulation, memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_) 
-
-```
+knowledge of bit manipulation, memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_)
 ### ptinf
 - It allows you to print text and values to the console or other output streams based on a specified format string.
 - Format string: The format string is a character string that specifies how the output should be formatted. It consists of plain characters and format specifiers, which start with the '%' character.
