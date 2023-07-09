@@ -1,5 +1,5 @@
 # 0x11. C - printf
-![python](https://camo.githubusercontent.com/01b0d036be42ff2bdd45896d151802cc5369e04e2091c85e53a0cde1185b2b1b/68747470733a2f2f692e6962622e636f2f43366b483942642f53696e2d742d74756c6f2d312e706e67)
+<p align="center"><img width="350" src="https://i.ibb.co/C6kH9Bd/Sin-t-tulo-1.png" alt="printf logo"></a></p>
 ## A GUIDE TO THE PROJECT TASKS
 [knowledge of bit manipulation](https://medium.com/@wamae-ndiritu/understanding-bits-and-endianness-exploring-binary-manipulation-and-memory-storage-c21f284f892f), memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_)
 ### ptinf
