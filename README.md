@@ -1,5 +1,7 @@
 # 0x11. C - printf
+
 <p align="center"><img width="350" src="https://i.ibb.co/C6kH9Bd/Sin-t-tulo-1.png" alt="printf logo"></a></p>
+
 ## A GUIDE TO THE PROJECT TASKS
 [knowledge of bit manipulation](https://medium.com/@wamae-ndiritu/understanding-bits-and-endianness-exploring-binary-manipulation-and-memory-storage-c21f284f892f), memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_)
 ### ptinf
