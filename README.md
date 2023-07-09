@@ -1,6 +1,7 @@
 # 0x11. C - printf
+![alt txt](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcamo.githubusercontent.com%2F01b0d036be42ff2bdd45896d151802cc5369e04e2091c85e53a0cde1185b2b1b%2F68747470733a2f2f692e6962622e636f2f43366b483942642f53696e2d742d74756c6f2d312e706e67&tbnid=CZh1IQdOYnUYgM&vet=10CAgQxiAoA2oXChMIyJa2tYiCgAMVAAAAAB0AAAAAEAY..i&imgrefurl=https%3A%2F%2Fgithub.com%2Falejogonza%2Fprintf&docid=FFt8fhqx6JubDM&w=1164&h=1004&itg=1&q=printf%20images&ved=0CAgQxiAoA2oXChMIyJa2tYiCgAMVAAAAAB0AAAAAEAY)
 ## A GUIDE TO THE PROJECT TASKS
-knowledge of bit manipulation, memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_)
+[knowledge of bit manipulation](https://medium.com/@wamae-ndiritu/understanding-bits-and-endianness-exploring-binary-manipulation-and-memory-storage-c21f284f892f), memory allocation, ROT13 algorithm and [general understanding of printf function](https://www.academia.edu/10297206/Secrets_of_printf_)
 ### ptinf
 - It allows you to print text and values to the console or other output streams based on a specified format string.
 - Format string: The format string is a character string that specifies how the output should be formatted. It consists of plain characters and format specifiers, which start with the '%' character.
